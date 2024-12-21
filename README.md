@@ -41,7 +41,6 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- Mobile-first workflow
 
 ### What I learned
 Setting an onclick event listener to the list items and executing the open/close function for FAQ answers.
