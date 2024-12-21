@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github repo](https://github.com/b16h22/faq_accordion_solution)
-- Live Site URL: [Github pages](https://github.com/b16h22/faq_accordion_solution/actions)
+- Live Site URL: [Github pages](https://b16h22.github.io/faq_accordion_solution/)
 
 ## My process
 
