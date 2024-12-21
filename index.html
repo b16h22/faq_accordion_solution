@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap">
+  
+  <title>Frontend Mentor | FAQ accordion</title>
+
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-title-section">
+        <img class="star-icon" src="./assets/images/icon-star.svg">
+        <h1 class="card-title">FAQs</h1>
+      </div>
+      <ul class="faq-list">
+        <li class="faq-list-item" id="faq-list-one">
+          <div class="faq-title">
+            <h4 class="faq-title-text" id="faq-one">What is Frontend Mentor, and how will it help me?</h4>
+            <img class="plus-button" id="button-expand-one" src="./assets/images/icon-plus.svg" alt="expand">
+          </div>
+          <p class="faq-expanded-text" id="expanded-text-one">Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.</p>  
+        </li>
+        <li class="faq-list-item" id="faq-list-two">
+          <div class="faq-title">
+            <h4 class="faq-title-text" id="faq-two">Is Frontend Mentor free?</h4>
+            <img class="plus-button" id="button-expand-two" src="./assets/images/icon-plus.svg" alt="expand">
+          </div>
+          <p class="faq-expanded-text" id="expanded-text-two">Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels.</p>
+        </li>
+        <li class="faq-list-item" id="faq-list-three">
+          <div class="faq-title">
+            <h4 class="faq-title-text" id="faq-three">Can I use Frontend Mentor projects in my portfolio?</h4>
+            <img class="plus-button" id="button-expand-three" src="./assets/images/icon-plus.svg" alt="expand">
+          </div>
+          <p class="faq-expanded-text" id="expanded-text-three">Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers!</p>
+        </li>
+        <li class="faq-list-item" id="faq-list-four">
+          <div class="faq-title">
+            <h4 class="faq-title-text" id="faq-four">How can I get help if I'm stuck on a challenge?</h4>
+            <img class="plus-button" id="button-expand-four" src="./assets/images/icon-plus.svg" alt="expand">
+          </div>
+          <p class="faq-expanded-text"  id="expanded-text-four">The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    
+    const faqListItem = document.querySelectorAll(".faq-list-item");
+    const faq = document.querySelectorAll(".faq-expanded-text");
+
+    for(let x of faqListItem) {
+      x.onclick = openFaq;
+      x.addEventListener("keypress", checkKey);
+    }
+
+    for(let i of faq) {
+      i.style.display = "none";
+    }
+
+    for(let r = 0; r < faqListItem.length; r++) {
+      faqListItem[r].tabIndex = [r] + 1;
+    }
+
+    function checkKey() {
+      if(event.key == "Enter") {
+        openFaq(event);
+      };
+    }
+
+    function openFaq(event) {
+      const childFaqText = event.currentTarget.querySelector(".faq-expanded-text");
+      const childButton = event.currentTarget.querySelector(".plus-button");
+      if (childFaqText.style.display === "none") {
+        childFaqText.style.display = "inline-block";
+        childButton.src = "./assets/images/icon-plus.svg";
+      } else {
+        childFaqText.style.display = "none";
+        childButton.src = "./assets/images/icon-minus.svg";
+      }
+    }
+
+  </script>
+</body>
+</html>
