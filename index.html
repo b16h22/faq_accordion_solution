@@ -67,7 +67,8 @@
     }
 
     for(let r = 0; r < faqListItem.length; r++) {
-      faqListItem[r].tabIndex = [r] + 1;
+      faqListItem[r].tabIndex = r + 1;
+      console.log(faqListItem[r].tabIndex);
     }
 
     function checkKey() {
